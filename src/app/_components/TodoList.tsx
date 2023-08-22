@@ -13,6 +13,7 @@ export default function TodoList({ initialTodos }: TodoListProps) {
     refetchOnMount: false,
     refetchOnReconnect: false,
   });
+
   const addTodo = trpc.addTodo.useMutation({
     onSettled: () => {
       getTodos.refetch();
